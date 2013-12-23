@@ -50,6 +50,9 @@ We tested this plugin with: Internet Explorer 8, 9, 10; Chrome; Safari; Firefox;
 
 == Changelog ==
 
+= 1.1.0 =
+* Bugfixes & Improvements
+
 = 1.0.0 =
 * Bugfix: A problem with creating new carousels
 * Some other little improvements
