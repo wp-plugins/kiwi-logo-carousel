@@ -51,6 +51,10 @@ We tested this plugin with: Internet Explorer 8, 9, 10; Chrome; Safari; Firefox;
 == Screenshots ==
 
 1. The Logo Carousel in action
+2. Uses Custom Post Types
+3. Uses categories as carousels
+4. Many options available
+5. Compatible with the new Wordpress 3.8!
 
 == Changelog ==
 
