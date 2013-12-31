@@ -48,6 +48,10 @@ Because the slug 'default' is already used for displaying all the logos.
 
 We tested this plugin with: Internet Explorer 8, 9, 10; Chrome; Safari; Firefox; Opera;
 
+== Screenshots ==
+
+1. The Logo Carousel in action
+
 == Changelog ==
 
 = 1.2.0 =
