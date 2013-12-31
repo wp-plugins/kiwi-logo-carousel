@@ -4,7 +4,7 @@ Donate link:
 Tags: logo, slider, carousel
 Requires at least: 3.6
 Tested up to: 3.8
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,6 +49,9 @@ Because the slug 'default' is already used for displaying all the logos.
 We tested this plugin with: Internet Explorer 8, 9, 10; Chrome; Safari; Firefox; Opera;
 
 == Changelog ==
+
+= 1.2.0 =
+* Bugfixes & Improvements
 
 = 1.1.0 =
 * Bugfixes & Improvements

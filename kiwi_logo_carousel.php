@@ -3,7 +3,7 @@
 	Plugin URL:		http://www.yourstyledesign.nl/
 	Description:	Highlight your clients, partners and sponsors on your website in a Logo Carousel
 	Author:			Yourstyledesign
-	Version:		1.1.0
+	Version:		1.2.0
 	Author URI:		http://www.yourstyledesign.nl/
 	License:		GPLv2
 */
@@ -68,15 +68,15 @@ class kiwi_logo_carousel {
 	
 	// Register carousels and get the Javascript parameters
 	function load_javascript_parameters(){
-		echo '<script> $(document).ready(function(){';
+		echo '<script> jQuery(document).ready(function(){';
 		$carousels = $this->klcadmin->return_carousels();
 		foreach ($carousels as $key => $value){
 			$parameters = $this->klcadmin->find_parameters( $key );
 			if ( $parameters == false ) {
-				echo '$(".kiwi-logo-carousel-'.$key.'").bxSlider();';
+				echo 'jQuery(".kiwi-logo-carousel-'.$key.'").bxSlider();';
 			}
 			else {
-				echo '$(".kiwi-logo-carousel-'.$key.'").bxSlider({';
+				echo 'jQuery(".kiwi-logo-carousel-'.$key.'").bxSlider({';
 				unset($parameters['klco_style']);
 				unset($parameters['klco_orderby']);
 				$lastkey = key( array_slice( $parameters, -1, 1, TRUE ) );
