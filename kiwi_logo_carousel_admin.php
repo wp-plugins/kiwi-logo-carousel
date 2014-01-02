@@ -6,7 +6,12 @@ class kiwi_logo_carousel_admin {
 	
 	function __construct() {
 		
+		//Wordpress 3.8 Icon
 		add_action( 'init', array( &$this, 'cpt_wordpress_font_icon' ) );
+		// Meta Box Link Attachment
+		add_action("add_meta_boxes", array( &$this, "metabox_link" ) );
+		// Save Custom Data From Meta Boxes
+		add_action('save_post', array( &$this, "metabox_savedata" ));
 		
 	}
 	
@@ -125,6 +130,34 @@ class kiwi_logo_carousel_admin {
 	function metabox_logo() {
 		remove_meta_box( 'postimagediv', 'kwlogos', 'side' );
 		add_meta_box( 'postimagediv', __( 'Logo' ) , 'post_thumbnail_meta_box', 'kwlogos', 'normal', 'high' );
+	}
+	
+	// Meta Box Link
+	function metabox_link() {
+		if ( 'kwlogos' == get_post_type() ){
+			add_meta_box("meta_kwlogoslink", __('URL attachment (optional)', 'kiwi_logo_carousel'), array( &$this, "metabox_link_contents" ), "kwlogos", "normal", "low"); //register metabox
+		}
+	}
+	
+	// Meta Box Link Contents
+	function metabox_link_contents() {
+		echo '<p>';
+		_e('Add an URL to make this logo clickable');
+		echo '</p>';
+		$value = get_post_meta( get_the_ID(), '_kwlogos_link', true );
+		?> <input style="width:100%;" id="kwlogos_link" class="kwlogos_link" name="kwlogos_link" type="url" value="<?php echo esc_attr($value); ?>" /> <?php
+	}
+	
+	// Save the custom metabox data
+	function metabox_savedata(){
+		if ( 'kwlogos' == $_POST['post_type'] ) {
+			if ( ! current_user_can( 'edit_page', $post_id ) ){return;}
+		}
+		else {return;}
+		if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ){ return $post_id; }
+		$post_ID = $_POST['post_ID'];
+		$kwlogos_link = sanitize_text_field( $_POST['kwlogos_link'] );
+		add_post_meta($post_ID, '_kwlogos_link', $kwlogos_link, true) or update_post_meta($post_ID, '_kwlogos_link', $kwlogos_link);
 	}
 	
 	// Admin Page

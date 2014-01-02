@@ -3,7 +3,7 @@
 	Plugin URL:		http://www.yourstyledesign.nl/
 	Description:	Highlight your clients, partners and sponsors on your website in a Logo Carousel
 	Author:			Yourstyledesign
-	Version:		1.2.0
+	Version:		1.3.1
 	Author URI:		http://www.yourstyledesign.nl/
 	License:		GPLv2
 */
@@ -123,7 +123,9 @@ function kiwi_logo_carousel_shortcode( $atts, $content = null ) {
 		$returnstring = '<ul class="kiwi-logo-carousel-'.$id.' '.$parameters['klco_style'].' col4">';
 		foreach ( $kiwi_cpt_array as $logo ):
 			$image = wp_get_attachment_url( get_post_thumbnail_id($logo->ID) );
-			$returnstring.= '<li><img src="'.$image.'" alt="'.$logo->post_title.'" title="'.$logo->post_title.'"></li>';
+			$url = get_post_meta( $logo->ID, '_kwlogos_link', true );
+			if (!empty($url)) { $returnstring.= '<li><a target="_blank" href="'.$url.'"><img src="'.$image.'" alt="'.$logo->post_title.'" title="'.$logo->post_title.'"></a></li>'; }
+			else { $returnstring.= '<li><img src="'.$image.'" alt="'.$logo->post_title.'" title="'.$logo->post_title.'"></li>'; }
 		endforeach;
 		$returnstring.= '</ul>';
 		return $returnstring;

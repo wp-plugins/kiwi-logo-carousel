@@ -4,7 +4,7 @@ Donate link:
 Tags: logo, slider, carousel
 Requires at least: 3.6
 Tested up to: 3.8
-Stable tag: 1.2.0
+Stable tag: 1.3.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,7 @@ Show your partners, clients or sponsors on your website in a logo carousel!
 <li>Responsive</li>
 <li>Grayscale images (optional)</li>
 <li>Uses shortcodes</li>
+<li>URL Attachments, make your logos clickable</li>
 <li>Multilanguage, English and Dutch</li>
 </ul>
 
@@ -57,6 +58,12 @@ We tested this plugin with: Internet Explorer 8, 9, 10; Chrome; Safari; Firefox;
 5. Compatible with the new Wordpress 3.8!
 
 == Changelog ==
+
+= 1.3.1 =
+* Add a url to your logo to make it clickable
+
+= 1.3.0 =
+* Beta version
 
 = 1.2.0 =
 * Bugfixes & Improvements
