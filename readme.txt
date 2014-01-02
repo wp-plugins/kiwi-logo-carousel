@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: ysdbjorn
+Contributors: ysdbjorn, broodjekaas
 Donate link:
 Tags: logo, slider, carousel
 Requires at least: 3.6
