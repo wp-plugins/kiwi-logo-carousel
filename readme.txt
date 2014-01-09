@@ -25,7 +25,7 @@ Show your partners, clients or sponsors on your website in a logo carousel!
 <li>Multilanguage, English and Dutch</li>
 </ul>
 
-<p>Please help us translate! Send your custom language files to <a href="mailto:bjorn@yourstyledesign.nl">bjorn@yourstyledesign.nl</a></p>
+<p>More than 500 downloads already. Thanks for supporting us!</p>
 
 <p>Kiwi Logo Carousel uses code and libraries from <a target="_blank" href="http://bxslider.com/">bxSlider</a> and <a target="_blank" href="http://10up.com/plugins/simple-page-ordering-wordpress/">Simple Page Ordering</a></p>
 
@@ -59,24 +59,31 @@ We tested this plugin with: Internet Explorer 8, 9, 10; Chrome; Safari; Firefox;
 
 == Changelog ==
 
-= 1.3.1 =
+= Coming Soon! =
+* Clickable logos: Open in new tab or in the same window
+* Ticker Mode: Pause on hover fix
+* Autoplay option
+* Retina support
+* Better responsive design
+
+= 1.3.1 (2013-01-02) =
 * Add a url to your logo to make it clickable
 
-= 1.3.0 =
+= 1.3.0 (2013-01-01) =
 * Beta version
 
-= 1.2.0 =
+= 1.2.0 (2013-12-31) =
 * Bugfixes & Improvements
 
-= 1.1.0 =
+= 1.1.0 (2013-12-21) =
 * Bugfixes & Improvements
 
-= 1.0.0 =
+= 1.0.0 (2013-12-20) =
 * Bugfix: A problem with creating new carousels
 * Some other little improvements
 * Better settings page layout
 * Sort logos by your Custom Order,  by Title, by Date or Random
 * New font icon for Wordpress 3.8
 
-= 0.1.2 =
+= 0.1.2 (2013-12-18) =
 * First release, Beta version
