@@ -59,7 +59,7 @@ We tested this plugin with: Internet Explorer 8, 9, 10; Chrome; Safari; Firefox;
 
 == Changelog ==
 
-= Work In Progress =
+= Coming Soon in Next Update =
 * Better responsive design
 
 = 1.4.0 (2013-01-10) =
