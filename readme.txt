@@ -4,7 +4,7 @@ Donate link:
 Tags: logo, slider, carousel
 Requires at least: 3.6
 Tested up to: 3.8
-Stable tag: 1.3.1
+Stable tag: 1.4.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,7 +25,7 @@ Show your partners, clients or sponsors on your website in a logo carousel!
 <li>Multilanguage, English and Dutch</li>
 </ul>
 
-<p>More than 500 downloads already. Thanks for supporting us!</p>
+<p>More than 500 downloads already. Thanks for downloading!</p>
 
 <p>Kiwi Logo Carousel uses code and libraries from <a target="_blank" href="http://bxslider.com/">bxSlider</a> and <a target="_blank" href="http://10up.com/plugins/simple-page-ordering-wordpress/">Simple Page Ordering</a></p>
 
@@ -59,18 +59,20 @@ We tested this plugin with: Internet Explorer 8, 9, 10; Chrome; Safari; Firefox;
 
 == Changelog ==
 
-= Coming Soon! =
-* Clickable logos: Open in new tab or in the same window
-* Ticker Mode: Pause on hover fix
-* Autoplay option
-* Retina support
+= Work In Progress =
 * Better responsive design
+
+= 1.4.0 (2013-01-10) =
+* Bugfix: Ticker Mode glitch when the loop start over
+* Bugfix: Pause on hover in Ticker Mode does not work
+* Improvement: Next & Previous controls are now suitable for retina displays.
+* Added Autoplay option. Turned on by default.
+* Added Clickable logos options: Open in new tab, Open in same window or Turn off.
+* Echo the logo carousel with a PHP function.
+* ...and other little improvements
 
 = 1.3.1 (2013-01-02) =
 * Add a url to your logo to make it clickable
-
-= 1.3.0 (2013-01-01) =
-* Beta version
 
 = 1.2.0 (2013-12-31) =
 * Bugfixes & Improvements

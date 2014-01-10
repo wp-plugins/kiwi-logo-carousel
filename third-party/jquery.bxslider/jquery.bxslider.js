@@ -30,7 +30,7 @@
 		adaptiveHeight: false,
 		adaptiveHeightSpeed: 500,
 		video: false,
-		useCSS: true,
+		useCSS: false, //default=true
 		preloadImages: 'visible',
 		responsive: true,
 
@@ -42,7 +42,7 @@
 		preventDefaultSwipeY: false,
 
 		// PAGER
-		pager: true,
+		pager: false, //default=true
 		pagerType: 'full',
 		pagerShortSeparator: ' / ',
 		pagerSelector: null,
@@ -62,7 +62,7 @@
 		autoControlsSelector: null,
 
 		// AUTO
-		auto: false,
+		auto: true, //default=false
 		pause: 4000,
 		autoStart: true,
 		autoDirection: 'next',
@@ -70,10 +70,10 @@
 		autoDelay: 0,
 
 		// CAROUSEL
-		minSlides: 1,
-		maxSlides: 1,
-		moveSlides: 0,
-		slideWidth: 0,
+		minSlides: 4, //default=1
+		maxSlides: 4, //default=1
+		moveSlides: 1, //default=0
+		slideWidth: 200, //default=0
 
 		// CALLBACKS
 		onSliderLoad: function() {},

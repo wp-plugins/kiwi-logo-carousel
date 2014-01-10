@@ -66,7 +66,7 @@ class kiwi_logo_carousel_admin {
 			'can_export' => true,
 			'rewrite' => true,
 			'capability_type' => 'post',
-			'menu_icon' => plugins_url( 'images/icon.png', __FILE__) ,
+			'menu_icon' => plugins_url( 'images/icon@2x.png', __FILE__) ,
 		);
 		register_post_type( 'kwlogos', $args );
 	}
@@ -77,6 +77,9 @@ class kiwi_logo_carousel_admin {
 		if ( $wp_version >= 3.8 ) {
 			add_action( 'admin_head', array( &$this, 'cpt_wordpress_font_icon_css' ) );
 		}
+		else {
+			add_action( 'admin_head', array( &$this, 'cpt_wordpress_img_icon_css' ) );
+		}
 	}
 	
 	// Write font-icon css rules
@@ -85,6 +88,11 @@ class kiwi_logo_carousel_admin {
 		#adminmenu .menu-icon-kwlogos div.wp-menu-image img { display: none; }
 		#adminmenu .menu-icon-kwlogos div.wp-menu-image:before { content: "\f180"; }
 		</style>';
+	}
+	
+	// Write image-icon css rules
+	function cpt_wordpress_img_icon_css() {
+		echo '<style> #adminmenu .menu-icon-kwlogos div.wp-menu-image img { width:16px; height:16px; } </style>';
 	}
 	
 	// The Custom Post Type Taxonomy
@@ -195,7 +203,6 @@ class kiwi_logo_carousel_admin {
 						$parameters['tickerHover'] = $this->rdie($_POST['klc_tickerhover'], 'false');
 						$parameters['adaptiveHeight'] = $this->rdie($_POST['klc_adaptiveheight'], 'false');
 						$parameters['responsive'] = $this->rdie($_POST['klc_responsive'], 'true');
-						$parameters['useCSS'] = $this->rdie($_POST['klc_usecss'], 'true');
 						$parameters['pager'] = $this->rdie($_POST['klc_pager'], 'false');
 						$parameters['controls'] = $this->rdie($_POST['klc_controls'], 'true');
 						$parameters['autoControls'] = $this->rdie($_POST['klc_autocontrols'], 'false');
@@ -203,8 +210,10 @@ class kiwi_logo_carousel_admin {
 						$parameters['maxSlides'] = $this->rdie($_POST['klc_maxslides'], '4');
 						$parameters['moveSlides'] = $this->rdie($_POST['klc_moveslides'], '1');
 						$parameters['slideWidth'] = $this->rdie($_POST['klc_slidewidth'], '0');
+						$parameters['auto'] = $this->rdie($_POST['klc_auto'], 'true');
 						$parameters['klco_style'] = $this->rdie($_POST['klco_style'], 'default');
 						$parameters['klco_orderby'] = $this->rdie($_POST['klco_orderby'], 'menu_order');
+						$parameters['klco_clickablelogos'] = $this->rdie($_POST['klco_clickablelogos'], 'newtab');
 						$parameters = serialize($parameters);
 						update_option( 'kiwiLGCRSL_'.$carousel, $parameters );
 						echo '<div id="setting-error-settings_updated" class="updated settings-error"><p><strong>'.__('Settings saved.').'</strong></p></div>';
@@ -228,6 +237,7 @@ class kiwi_logo_carousel_admin {
 									<div class="inside">
 										<?php submit_button(); ?>
 										<p><?php _e('Shortcode','kiwi_logo_carousel'); ?>:<br/> <code>[logo-carousel id=<?php echo $carousel; ?>]</code></p>
+										<p><?php _e('PHP Function (No echo required)','kiwi_logo_carousel'); ?>:<br/> <code>kw_sc_logo_carousel(<?php echo $carousel; ?>);</code></p>
 									</div>
 								</div>
 							</div>
@@ -258,6 +268,13 @@ class kiwi_logo_carousel_admin {
 													</select></td>
 												</tr>
 												<tr valign="top">
+													<th scope="row"><?php _e('Autoplay','kiwi_logo_carousel'); ?></th>
+													<td><select name="klc_auto">
+														<option value="true" <?php if (isset($p['auto']) && $p['auto']=='true'){echo 'selected';} ?>><?php _e('True','kiwi_logo_carousel'); ?></option>
+														<option value="false" <?php if (isset($p['auto']) && $p['auto']=='false'){echo 'selected';} ?>><?php _e('False','kiwi_logo_carousel'); ?></option>
+													</select></td>
+												</tr>
+												<tr valign="top">
 													<th scope="row"><?php _e('Use Ticker Mode','kiwi_logo_carousel'); ?></th>
 													<td><select name="klc_ticker">
 														<option value="false" <?php if (isset($p['ticker']) && $p['ticker']=='false'){echo 'selected';} ?>><?php _e('False','kiwi_logo_carousel'); ?></option>
@@ -278,6 +295,14 @@ class kiwi_logo_carousel_admin {
 														<option value="rand" <?php if (isset($p['klco_orderby']) && $p['klco_orderby']=='rand'){echo 'selected';} ?>><?php _e('Random Order','kiwi_logo_carousel'); ?></option>
 														<option value="title" <?php if (isset($p['klco_orderby']) && $p['klco_orderby']=='title'){echo 'selected';} ?>><?php _e('Title','kiwi_logo_carousel'); ?></option>
 														<option value="date" <?php if (isset($p['klco_orderby']) && $p['klco_orderby']=='date'){echo 'selected';} ?>><?php _e('Date','kiwi_logo_carousel'); ?></option>
+													</select></td>
+												</tr>
+												<tr valign="top">
+													<th scope="row"><?php _e('Clickable logos','kiwi_logo_carousel'); ?></th>
+													<td><select name="klco_clickablelogos">
+														<option value="newtab" <?php if (isset($p['klco_clickablelogos']) && $p['klco_clickablelogos']=='newtab'){echo 'selected';} ?>><?php _e('Open in new tab','kiwi_logo_carousel'); ?></option>
+														<option value="samewindow" <?php if (isset($p['klco_clickablelogos']) && $p['klco_clickablelogos']=='samewindow'){echo 'selected';} ?>><?php _e('Open in the same window','kiwi_logo_carousel'); ?></option>
+														<option value="off" <?php if (isset($p['klco_clickablelogos']) && $p['klco_clickablelogos']=='off'){echo 'selected';} ?>><?php _e('Turn off','kiwi_logo_carousel'); ?></option>
 													</select></td>
 												</tr>
 											</table>
@@ -370,13 +395,6 @@ class kiwi_logo_carousel_admin {
 												<tr valign="top">
 													<th scope="row"><?php _e('Slide Width','kiwi_logo_carousel'); ?></th>
 													<td><input name="klc_slidewidth" type="number" value="<?=$p['slideWidth']?>"/></td>
-												</tr>
-												<tr valign="top">
-													<th scope="row"><?php _e('Use CSS animations','kiwi_logo_carousel'); ?></th>
-													<td><select name="klc_usecss">
-														<option value="true" <?php if (isset($p['useCSS']) && $p['useCSS']=='true'){echo 'selected';} ?>><?php _e('True','kiwi_logo_carousel'); ?></option>
-														<option value="false" <?php if (isset($p['useCSS']) && $p['useCSS']=='false'){echo 'selected';} ?>><?php _e('False','kiwi_logo_carousel'); ?></option>
-													</select></td>
 												</tr>
 											</table>
 										</div>

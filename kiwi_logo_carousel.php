@@ -2,8 +2,8 @@
 /*	Plugin Name:	Kiwi Logo Carousel
 	Plugin URL:		http://www.yourstyledesign.nl/
 	Description:	Highlight your clients, partners and sponsors on your website in a Logo Carousel
-	Author:			Yourstyledesign
-	Version:		1.3.1
+	Author:			Kiwi Plugins by Yourstyledesign
+	Version:		1.4.0
 	Author URI:		http://www.yourstyledesign.nl/
 	License:		GPLv2
 */
@@ -51,7 +51,7 @@ class kiwi_logo_carousel {
 	function register_settings() {
 		//register_setting( 'kiwi_logo_carousel_settings', 'kiwiLGCRSL-library');
 	}
-
+	
 	// Load scripts
 	function load_scripts() {
 		wp_deregister_script( 'bxslider' );
@@ -79,10 +79,12 @@ class kiwi_logo_carousel {
 				echo 'jQuery(".kiwi-logo-carousel-'.$key.'").bxSlider({';
 				unset($parameters['klco_style']);
 				unset($parameters['klco_orderby']);
+				unset($parameters['klco_clickablelogos']);
+				$parameters['useCSS'] = 'false';
 				$lastkey = key( array_slice( $parameters, -1, 1, TRUE ) );
 				foreach ($parameters as $func => $var){
 					echo $func.':';
-					if ( $var=="true" || $var=="false" ) { echo $var; } else { echo '"'.$var.'"'; }
+					if ( $var=="true" || $var=="false" || is_numeric($var) ) { echo $var; } else { echo '"'.$var.'"'; }
 					if ($lastkey == $func) { echo ''; }
 					else { echo ','; }
 				}
@@ -124,10 +126,20 @@ function kiwi_logo_carousel_shortcode( $atts, $content = null ) {
 		foreach ( $kiwi_cpt_array as $logo ):
 			$image = wp_get_attachment_url( get_post_thumbnail_id($logo->ID) );
 			$url = get_post_meta( $logo->ID, '_kwlogos_link', true );
-			if (!empty($url)) { $returnstring.= '<li><a target="_blank" href="'.$url.'"><img src="'.$image.'" alt="'.$logo->post_title.'" title="'.$logo->post_title.'"></a></li>'; }
+			if ( !isset( $parameters['klco_clickablelogos'] )) { $parameters['klco_clickablelogos'] = 'newtab'; }
+			if ( !empty($url) && $parameters['klco_clickablelogos']!="off" ) {
+				if ( $parameters['klco_clickablelogos'] == "newtab" ) { $returnstring.= '<li><a target="_blank" href="'.$url.'"><img src="'.$image.'" alt="'.$logo->post_title.'" title="'.$logo->post_title.'"></a></li>'; }
+				else if ( $parameters['klco_clickablelogos'] == "samewindow" ) { $returnstring.= '<li><a href="'.$url.'"><img src="'.$image.'" alt="'.$logo->post_title.'" title="'.$logo->post_title.'"></a></li>'; }
+			}
 			else { $returnstring.= '<li><img src="'.$image.'" alt="'.$logo->post_title.'" title="'.$logo->post_title.'"></li>'; }
 		endforeach;
 		$returnstring.= '</ul>';
 		return $returnstring;
+	}
+}
+
+if ( ! function_exists('kw_sc_logo_carousel')) {
+	function kw_sc_logo_carousel($id = 'default') {
+		echo do_shortcode('[logo-carousel '.$id.']');
 	}
 }

@@ -22,6 +22,12 @@
 	opacity:1;
 }
 
+.bx-wrapper ul {
+	list-style-type:none;
+	padding:0;
+	margin:0;
+}
+
 .bx-wrapper ul li {
 	text-align:center;
 }
@@ -41,4 +47,14 @@
 .bx-wrapper ul.grayhovercolor li img:hover {
     filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
     -webkit-filter: grayscale(0%);
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2) {
+	.bx-wrapper .bx-prev { background: url(third-party/jquery.bxslider/images/controls@2x.png) no-repeat 0 -32px; background-size:96px,63px; }
+	.bx-wrapper .bx-next { background: url(third-party/jquery.bxslider/images/controls@2x.png) no-repeat -43px -32px; background-size:96px,63px; }
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 3) {
+	.bx-wrapper .bx-prev { background: url(third-party/jquery.bxslider/images/controls@3x.png) no-repeat 0 -32px; background-size:96px,63px; }
+	.bx-wrapper .bx-next { background: url(third-party/jquery.bxslider/images/controls@3x.png) no-repeat -43px -32px; background-size:96px,63px; }
 }
