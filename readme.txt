@@ -4,7 +4,7 @@ Donate link:
 Tags: logo, slider, carousel
 Requires at least: 3.6
 Tested up to: 3.8
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,9 @@ We tested this plugin with: Internet Explorer 8, 9, 10; Chrome; Safari; Firefox;
 
 = Coming Soon in Next Update =
 * Better responsive design
+
+= 1.4.1 (2013-01-22) =
+* Some changes in the Dutch translation file
 
 = 1.4.0 (2013-01-10) =
 * Bugfix: Ticker Mode glitch when the loop start over
