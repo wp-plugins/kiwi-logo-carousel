@@ -3,7 +3,7 @@
 	Plugin URL:		http://www.yourstyledesign.nl/
 	Description:	Highlight your clients, partners and sponsors on your website in a Logo Carousel
 	Author:			Kiwi Plugins by Yourstyledesign
-	Version:		1.4.0
+	Version:		1.4.1
 	Author URI:		http://www.yourstyledesign.nl/
 	License:		GPLv2
 */
