@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: ysdbjorn
-Donate link:
+Donate link: http://getkiwi.org/donate/
 Tags: logo, slider, carousel
 Requires at least: 3.6
 Tested up to: 3.8
