@@ -4,7 +4,7 @@ Donate link: http://getkiwi.org/donate/
 Tags: logo, slider, carousel
 Requires at least: 3.6
 Tested up to: 3.8
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,13 +59,13 @@ We tested this plugin with: Internet Explorer 8, 9, 10; Chrome; Safari; Firefox;
 
 == Changelog ==
 
-= Coming Soon in Next Update =
-* Better responsive design
+= 1.4.2 (2014-01-23) =
+* Some little improvements
 
-= 1.4.1 (2013-01-22) =
+= 1.4.1 (2014-01-22) =
 * Some changes in the Dutch translation file
 
-= 1.4.0 (2013-01-10) =
+= 1.4.0 (2014-01-10) =
 * Bugfix: Ticker Mode glitch when the loop start over
 * Bugfix: Pause on hover in Ticker Mode does not work
 * Improvement: Next & Previous controls are now suitable for retina displays.
@@ -74,7 +74,7 @@ We tested this plugin with: Internet Explorer 8, 9, 10; Chrome; Safari; Firefox;
 * Echo the logo carousel with a PHP function.
 * ...and other little improvements
 
-= 1.3.1 (2013-01-02) =
+= 1.3.1 (2014-01-02) =
 * Add a url to your logo to make it clickable
 
 = 1.2.0 (2013-12-31) =

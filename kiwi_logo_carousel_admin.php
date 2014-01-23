@@ -233,11 +233,22 @@ class kiwi_logo_carousel_admin {
 						<div class="inner-sidebar">
 							<div id="side-sortables" class="ui-sortable meta-box-sortable">
 								<div class="postbox">
-									<div title="Click to toggle" class="handlediv"><br></div><h3 class="hndle"><span><?php _e('Carousel','kiwi_logo_carousel'); ?></span></h3>
+									<h3><span><?php _e('Carousel','kiwi_logo_carousel'); ?></span></h3>
 									<div class="inside">
 										<?php submit_button(); ?>
 										<p><?php _e('Shortcode','kiwi_logo_carousel'); ?>:<br/> <code>[logo-carousel id=<?php echo $carousel; ?>]</code></p>
 										<p><?php _e('PHP Function (No echo required)','kiwi_logo_carousel'); ?>:<br/> <code>kw_sc_logo_carousel(<?php echo $carousel; ?>);</code></p>
+									</div>
+								</div>
+								<div class="postbox">
+									<h3><span><?php _e('Donate','kiwi_logo_carousel'); ?></span></h3>
+									<div class="inside">
+										<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+											<input type="hidden" name="cmd" value="_s-xclick">
+											<input type="hidden" name="hosted_button_id" value="K5Z5PN2ZSBE2G">
+											<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+											<img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
+										</form>
 									</div>
 								</div>
 							</div>
@@ -246,7 +257,7 @@ class kiwi_logo_carousel_admin {
 							<div id="post-body-content">
 								<div id="normal-sortables" class="meta-box-sortables ui-sortable">
 									<div class="postbox">
-										<div title="Click to toggle" class="handlediv"><br></div><h3 class="hndle"><span><?php _e('General','kiwi_logo_carousel'); ?></span></h3>
+										<h3><span><?php _e('General','kiwi_logo_carousel'); ?></span></h3>
 										<div class="inside">
 											<table class="form-table">
 												<tr valign="top">
@@ -309,7 +320,7 @@ class kiwi_logo_carousel_admin {
 										</div>
 									</div>
 									<div class="postbox">
-										<div title="Click to toggle" class="handlediv"><br></div><h3 class="hndle"><span><?php _e('Controls','kiwi_logo_carousel'); ?></span></h3>
+										<h3><span><?php _e('Controls','kiwi_logo_carousel'); ?></span></h3>
 										<div class="inside">
 											<table class="form-table">
 												<tr valign="top">
@@ -344,7 +355,7 @@ class kiwi_logo_carousel_admin {
 										</div>
 									</div>
 									<div class="postbox">
-										<div title="Click to toggle" class="handlediv"><br></div><h3 class="hndle"><span><?php _e('Styling','kiwi_logo_carousel'); ?></span></h3>
+										<h3><span><?php _e('Styling','kiwi_logo_carousel'); ?></span></h3>
 										<div class="inside">
 											<table class="form-table">
 												<tr valign="top">
