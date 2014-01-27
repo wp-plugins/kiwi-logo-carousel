@@ -3,8 +3,8 @@ Contributors: ysdbjorn
 Donate link: http://getkiwi.org/donate/
 Tags: logo, slider, carousel
 Requires at least: 3.6
-Tested up to: 3.8
-Stable tag: 1.4.2
+Tested up to: 3.8.1
+Stable tag: 1.4.3
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,8 +24,6 @@ Show your partners, clients or sponsors on your website in a logo carousel!
 <li>URL Attachments, make your logos clickable</li>
 <li>Multilanguage, English and Dutch</li>
 </ul>
-
-<p>More than 500 downloads already. Thanks for downloading!</p>
 
 <p>Kiwi Logo Carousel uses code and libraries from <a target="_blank" href="http://bxslider.com/">bxSlider</a> and <a target="_blank" href="http://10up.com/plugins/simple-page-ordering-wordpress/">Simple Page Ordering</a></p>
 
@@ -49,6 +47,14 @@ Because the slug 'default' is already used for displaying all the logos.
 
 We tested this plugin with: Internet Explorer 8, 9, 10; Chrome; Safari; Firefox; Opera;
 
+= What are the server requirements? =
+
+You need a server running PHP version 5.4 or newer. Older versions are not supported and may cause problems.
+
+= The slider is not displayed well =
+
+Some CSS styles in themes may cause problems. Debug your CSS if you have any problems. The developer tools in Chrome or Firefox are a good tool for that. You can also try the Firebug extension for Firefox.
+
 == Screenshots ==
 
 1. The Logo Carousel in action
@@ -59,6 +65,9 @@ We tested this plugin with: Internet Explorer 8, 9, 10; Chrome; Safari; Firefox;
 
 == Changelog ==
 
+= 1.4.3 (2014-01-27) =
+* Bugfixes
+
 = 1.4.2 (2014-01-23) =
 * Some little improvements
 
@@ -66,7 +75,7 @@ We tested this plugin with: Internet Explorer 8, 9, 10; Chrome; Safari; Firefox;
 * Some changes in the Dutch translation file
 
 = 1.4.0 (2014-01-10) =
-* Bugfix: Ticker Mode glitch when the loop start over
+* Bugfix: Ticker Mode glitch when the loop starts over
 * Bugfix: Pause on hover in Ticker Mode does not work
 * Improvement: Next & Previous controls are now suitable for retina displays.
 * Added Autoplay option. Turned on by default.

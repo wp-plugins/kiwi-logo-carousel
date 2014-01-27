@@ -158,14 +158,52 @@ class kiwi_logo_carousel_admin {
 	
 	// Save the custom metabox data
 	function metabox_savedata(){
-		if ( 'kwlogos' == $_POST['post_type'] ) {
+	
+		$post_type = null;
+		$post_id = null;
+		$link_field = null;
+	
+		if( isset($_GET['post_type']) ) {
+			$post_type = $_GET['post_type'];
+		}
+		else if( isset($_POST['post_type']) ) {
+			$post_type = $_POST['post_type'];
+		}
+		if( isset($_GET['post_id']) ) {
+			$post_id = $_GET['post_id'];
+		}
+		else if( isset($_POST['post_id']) ) {
+			$post_id = $_POST['post_id'];
+		}
+
+		if( isset($_GET['kwlogos_link']) ) {
+			$link_field = $_GET['kwlogos_link'];
+		}
+		else if( isset($_POST['kwlogos_link']) ) {
+			$link_field = $_POST['kwlogos_link'];
+		}
+
+		if ( 'kwlogos' == $post_type ) {
+			if ( ! current_user_can( 'edit_posts') ){return;}
+		}
+		else {return;}
+
+		if (( !$post_type == null )&& ('kwlogos' == $post_type)) {
 			if ( ! current_user_can( 'edit_page', $post_id ) ){return;}
 		}
 		else {return;}
+
+
+		// At this point we have established that we are on a specific post type page and maybe have a specific post id
+		// and that the user is allowed to save it.
 		if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ){ return $post_id; }
-		$post_ID = $_POST['post_ID'];
-		$kwlogos_link = sanitize_text_field( $_POST['kwlogos_link'] );
-		add_post_meta($post_ID, '_kwlogos_link', $kwlogos_link, true) or update_post_meta($post_ID, '_kwlogos_link', $kwlogos_link);
+
+		if (! $link_field == null) {
+			$link_field = sanitize_text_field( $link_field );
+		} else {
+			$link_field = '';
+		}
+		add_post_meta($post_id, '_kwlogos_link', $link_field, true) or update_post_meta($post_id, '_kwlogos_link', $link_field);
 	}
 	
 	// Admin Page
@@ -269,7 +307,7 @@ class kiwi_logo_carousel_admin {
 												</tr>
 												<tr valign="top">
 													<th scope="row"><?php _e('Speed (ms)','kiwi_logo_carousel'); ?></th>
-													<td><input name="klc_speed" type="number" value="<?=$p['speed'];?>"/></td>
+													<td><input name="klc_speed" type="number" value="<?php if (isset($p['speed'])) {echo $p['speed'];} ?>"/></td>
 												</tr>
 												<tr valign="top">
 													<th scope="row"><?php _e('Infinite Loop','kiwi_logo_carousel'); ?></th>
@@ -360,7 +398,7 @@ class kiwi_logo_carousel_admin {
 											<table class="form-table">
 												<tr valign="top">
 													<th scope="row"><?php _e('Logo Margin','kiwi_logo_carousel'); ?></th>
-													<td><input name="klc_slidemargin" type="number" value="<?=$p['slideMargin']?>"/></td>
+													<td><input name="klc_slidemargin" type="number" value="<?php if (isset($p['slideMargin'])) {echo $p['slideMargin'];} ?>"/></td>
 												</tr>
 												<tr valign="top">
 													<th scope="row"><?php _e('Logo Style','kiwi_logo_carousel'); ?></th>
@@ -393,19 +431,19 @@ class kiwi_logo_carousel_admin {
 												</tr>
 												<tr valign="top">
 													<th scope="row"><?php _e('Minimal slides','kiwi_logo_carousel'); ?></th>
-													<td><input name="klc_minslides" type="number" value="<?=$p['minSlides']?>"/></td>
+													<td><input name="klc_minslides" type="number" value="<?php if (isset($p['minSlides'])) {echo $p['minSlides'];} ?>"/></td>
 												</tr>
 												<tr valign="top">
 													<th scope="row"><?php _e('Maximum slides','kiwi_logo_carousel'); ?></th>
-													<td><input name="klc_maxslides" type="number" value="<?=$p['maxSlides']?>"/></td>
+													<td><input name="klc_maxslides" type="number" value="<?php if (isset($p['maxSlides'])) {echo $p['maxSlides'];} ?>"/></td>
 												</tr>
 												<tr valign="top">
 													<th scope="row"><?php _e('Move slides','kiwi_logo_carousel'); ?></th>
-													<td><input name="klc_moveslides" type="number" value="<?=$p['moveSlides']?>"/></td>
+													<td><input name="klc_moveslides" type="number" value="<?php if (isset($p['moveSlides'])) {echo $p['moveSlides'];} ?>"/></td>
 												</tr>
 												<tr valign="top">
 													<th scope="row"><?php _e('Slide Width','kiwi_logo_carousel'); ?></th>
-													<td><input name="klc_slidewidth" type="number" value="<?=$p['slideWidth']?>"/></td>
+													<td><input name="klc_slidewidth" type="number" value="<?php if (isset($p['slideWidth'])) {echo $p['slideWidth'];} ?>"/></td>
 												</tr>
 											</table>
 										</div>
