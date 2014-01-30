@@ -1,10 +1,10 @@
 <?php
 /*	Plugin Name:	Kiwi Logo Carousel
-	Plugin URL:		http://www.yourstyledesign.nl/
+	Plugin URL:		http://getkiwi.org/plugins/logo-carousel/
 	Description:	Highlight your clients, partners and sponsors on your website in a Logo Carousel
-	Author:			Kiwi Plugins by Yourstyledesign
-	Version:		1.4.3
-	Author URI:		http://www.yourstyledesign.nl/
+	Author:			Kiwi by Yourstyledesign
+	Version:		1.4.4
+	Author URI:		http://www.getkiwi.org/
 	License:		GPLv2
 */
 

@@ -159,51 +159,15 @@ class kiwi_logo_carousel_admin {
 	// Save the custom metabox data
 	function metabox_savedata(){
 	
-		$post_type = null;
-		$post_id = null;
-		$link_field = null;
-	
-		if( isset($_GET['post_type']) ) {
-			$post_type = $_GET['post_type'];
-		}
-		else if( isset($_POST['post_type']) ) {
-			$post_type = $_POST['post_type'];
-		}
-		if( isset($_GET['post_id']) ) {
-			$post_id = $_GET['post_id'];
-		}
-		else if( isset($_POST['post_id']) ) {
-			$post_id = $_POST['post_id'];
-		}
-
-		if( isset($_GET['kwlogos_link']) ) {
-			$link_field = $_GET['kwlogos_link'];
-		}
-		else if( isset($_POST['kwlogos_link']) ) {
-			$link_field = $_POST['kwlogos_link'];
-		}
-
-		if ( 'kwlogos' == $post_type ) {
-			if ( ! current_user_can( 'edit_posts') ){return;}
-		}
-		else {return;}
-
-		if (( !$post_type == null )&& ('kwlogos' == $post_type)) {
+		if ( 'kwlogos' == $_POST['post_type'] ) {
 			if ( ! current_user_can( 'edit_page', $post_id ) ){return;}
 		}
 		else {return;}
-
-
-		// At this point we have established that we are on a specific post type page and maybe have a specific post id
-		// and that the user is allowed to save it.
 		if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ){ return $post_id; }
-
-		if (! $link_field == null) {
-			$link_field = sanitize_text_field( $link_field );
-		} else {
-			$link_field = '';
-		}
-		add_post_meta($post_id, '_kwlogos_link', $link_field, true) or update_post_meta($post_id, '_kwlogos_link', $link_field);
+		$post_ID = $_POST['post_ID'];
+		$kwlogos_link = sanitize_text_field( $_POST['kwlogos_link'] );
+		add_post_meta($post_ID, '_kwlogos_link', $kwlogos_link, true) or update_post_meta($post_ID, '_kwlogos_link', $kwlogos_link);
+		
 	}
 	
 	// Admin Page
@@ -268,29 +232,6 @@ class kiwi_logo_carousel_admin {
 				<div class="wrap">
 					<form method="POST">
 					<div id="poststuff" class="metabox-holder has-right-sidebar">
-						<div class="inner-sidebar">
-							<div id="side-sortables" class="ui-sortable meta-box-sortable">
-								<div class="postbox">
-									<h3><span><?php _e('Carousel','kiwi_logo_carousel'); ?></span></h3>
-									<div class="inside">
-										<?php submit_button(); ?>
-										<p><?php _e('Shortcode','kiwi_logo_carousel'); ?>:<br/> <code>[logo-carousel id=<?php echo $carousel; ?>]</code></p>
-										<p><?php _e('PHP Function (No echo required)','kiwi_logo_carousel'); ?>:<br/> <code>kw_sc_logo_carousel(<?php echo $carousel; ?>);</code></p>
-									</div>
-								</div>
-								<div class="postbox">
-									<h3><span><?php _e('Donate','kiwi_logo_carousel'); ?></span></h3>
-									<div class="inside">
-										<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-											<input type="hidden" name="cmd" value="_s-xclick">
-											<input type="hidden" name="hosted_button_id" value="K5Z5PN2ZSBE2G">
-											<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-											<img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
 						<div id="post-body">
 							<div id="post-body-content">
 								<div id="normal-sortables" class="meta-box-sortables ui-sortable">
@@ -382,13 +323,13 @@ class kiwi_logo_carousel_admin {
 														<option value="true" <?php if (isset($p['pager']) && $p['pager']=='true'){echo 'selected';} ?>><?php _e('True','kiwi_logo_carousel'); ?></option>
 													</select></td>
 												</tr>
-												<tr valign="top">
+												<!--<tr valign="top">
 													<th scope="row"><?php _e('Show Start and Stop Controls','kiwi_logo_carousel'); ?></th>
 													<td><select name="klc_autocontrols">
 														<option value="false" <?php if (isset($p['autoControls']) && $p['autoControls']=='false'){echo 'selected';} ?>><?php _e('False','kiwi_logo_carousel'); ?></option>
 														<option value="true" <?php if (isset($p['autoControls']) && $p['autoControls']=='true'){echo 'selected';} ?>><?php _e('True','kiwi_logo_carousel'); ?></option>
 													</select></td>
-												</tr>
+												</tr>-->
 											</table>
 										</div>
 									</div>
@@ -451,8 +392,30 @@ class kiwi_logo_carousel_admin {
 								</div>
 							</div>
 						</div>
+						<div class="inner-sidebar">
+							<div id="side-sortables" class="ui-sortable meta-box-sortable">
+								<div class="postbox">
+									<h3><span><?php _e('Carousel','kiwi_logo_carousel'); ?></span></h3>
+									<div class="inside">
+										<?php submit_button(); ?>
+										<p><?php _e('Shortcode','kiwi_logo_carousel'); ?>:<br/> <code>[logo-carousel id=<?php echo $carousel; ?>]</code></p>
+										<p><?php _e('PHP Function (No echo required)','kiwi_logo_carousel'); ?>:<br/> <code>kw_sc_logo_carousel(<?php echo $carousel; ?>);</code></p>
+									</div>
+								</div></form>
+								<div class="postbox">
+									<h3><span><?php _e('Donate','kiwi_logo_carousel'); ?></span></h3>
+									<div class="inside">
+										<form style="text-align:center; width:100%;" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+											<input type="hidden" name="cmd" value="_s-xclick">
+											<input type="hidden" name="hosted_button_id" value="K5Z5PN2ZSBE2G">
+											<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+											<img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-					</form>
 				</div>
 				<?php
 				}

@@ -4,7 +4,7 @@ Donate link: http://getkiwi.org/donate/
 Tags: logo, slider, carousel
 Requires at least: 3.6
 Tested up to: 3.8.1
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,12 +48,7 @@ Because the slug 'default' is already used for displaying all the logos.
 We tested this plugin with: Internet Explorer 8, 9, 10; Chrome; Safari; Firefox; Opera;
 
 = What are the server requirements? =
-
 You need a server running PHP version 5.4 or newer. Older versions are not supported and may cause problems.
-
-= The slider is not displayed well =
-
-Some CSS styles in themes may cause problems. Debug your CSS if you have any problems. The developer tools in Chrome or Firefox are a good tool for that. You can also try the Firebug extension for Firefox.
 
 == Screenshots ==
 
@@ -65,8 +60,11 @@ Some CSS styles in themes may cause problems. Debug your CSS if you have any pro
 
 == Changelog ==
 
+= 1.4.4 (2014-01-30) =
+* Reversed some changes from last update, because of a bug
+
 = 1.4.3 (2014-01-27) =
-* Bugfixes
+* Some little improvements
 
 = 1.4.2 (2014-01-23) =
 * Some little improvements
@@ -75,7 +73,7 @@ Some CSS styles in themes may cause problems. Debug your CSS if you have any pro
 * Some changes in the Dutch translation file
 
 = 1.4.0 (2014-01-10) =
-* Bugfix: Ticker Mode glitch when the loop starts over
+* Bugfix: Ticker Mode glitch when the loop start over
 * Bugfix: Pause on hover in Ticker Mode does not work
 * Improvement: Next & Previous controls are now suitable for retina displays.
 * Added Autoplay option. Turned on by default.
