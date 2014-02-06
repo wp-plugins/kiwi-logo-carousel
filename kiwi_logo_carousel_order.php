@@ -192,6 +192,7 @@ class kiwi_logo_carousel_order {
 	
 	public function sort_by_order_link( $views ) {
 		$class = ( get_query_var('orderby') == 'menu_order title' ) ? 'current' : '';
+		if ($class == 'current') { echo '<div id="setting-error-settings_updated" class="updated settings-error below-h2"><p><strong>'.__('Drag and drop items to change the custom order','kiwi_logo_carousel').'</strong></p></div>'; }
 		$query_string = remove_query_arg(array( 'orderby', 'order' ));
 		$query_string = add_query_arg( 'orderby', urlencode('menu_order title'), $query_string );
 		$views['byorder'] = '<a href="'. $query_string . '" class="' . $class . '">'.__('Custom Order','kiwi_logo_carousel').'</a>';

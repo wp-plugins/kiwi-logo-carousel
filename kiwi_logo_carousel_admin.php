@@ -13,6 +13,9 @@ class kiwi_logo_carousel_admin {
 		// Save Custom Data From Meta Boxes
 		add_action('save_post', array( &$this, "metabox_savedata" ));
 		
+		add_filter('manage_kwlogos_posts_columns', array( &$this, 'overview_columns' ), 10);
+		add_action('manage_kwlogos_posts_custom_column', array( &$this, 'overview_columns_values' ), 10, 2);
+		
 	}
 	
 	// Returns the default specified when the input is empty
@@ -169,6 +172,26 @@ class kiwi_logo_carousel_admin {
 		add_post_meta($post_ID, '_kwlogos_link', $kwlogos_link, true) or update_post_meta($post_ID, '_kwlogos_link', $kwlogos_link);
 		
 	}
+
+	// Custom columns in logo overview
+	function overview_columns($cols) {
+		$cols['url'] = __('URL','kiwi_logo_carousel');
+		$cols['logo'] = __('Logo Preview','kiwi_logo_carousel');
+		return $cols;
+	}
+	
+	function overview_columns_values($column_name, $post_ID) {
+		if ($column_name == 'logo') {
+			$img_url = wp_get_attachment_url( get_post_thumbnail_id($post_ID) );
+			//$img_url = 'placeholder';
+			if ($img_url) { echo '<img height="50" src="'.$img_url.'" />'; }
+			else { _e('No logo set', 'kiwi_logo_carousel'); }
+		}
+		else if ($column_name == 'url') {
+			$value = get_post_meta( $post_ID, '_kwlogos_link', true );
+			 if ($value) { echo $value; }
+		}
+	}
 	
 	// Admin Page
 	function admin_pages() {
@@ -285,7 +308,7 @@ class kiwi_logo_carousel_admin {
 														<option value="rand" <?php if (isset($p['klco_orderby']) && $p['klco_orderby']=='rand'){echo 'selected';} ?>><?php _e('Random Order','kiwi_logo_carousel'); ?></option>
 														<option value="title" <?php if (isset($p['klco_orderby']) && $p['klco_orderby']=='title'){echo 'selected';} ?>><?php _e('Title','kiwi_logo_carousel'); ?></option>
 														<option value="date" <?php if (isset($p['klco_orderby']) && $p['klco_orderby']=='date'){echo 'selected';} ?>><?php _e('Date','kiwi_logo_carousel'); ?></option>
-													</select></td>
+													</select> <span class="description"></span></td>
 												</tr>
 												<tr valign="top">
 													<th scope="row"><?php _e('Clickable logos','kiwi_logo_carousel'); ?></th>
@@ -293,7 +316,7 @@ class kiwi_logo_carousel_admin {
 														<option value="newtab" <?php if (isset($p['klco_clickablelogos']) && $p['klco_clickablelogos']=='newtab'){echo 'selected';} ?>><?php _e('Open in new tab','kiwi_logo_carousel'); ?></option>
 														<option value="samewindow" <?php if (isset($p['klco_clickablelogos']) && $p['klco_clickablelogos']=='samewindow'){echo 'selected';} ?>><?php _e('Open in the same window','kiwi_logo_carousel'); ?></option>
 														<option value="off" <?php if (isset($p['klco_clickablelogos']) && $p['klco_clickablelogos']=='off'){echo 'selected';} ?>><?php _e('Turn off','kiwi_logo_carousel'); ?></option>
-													</select></td>
+													</select> <span class="description"></span></td>
 												</tr>
 											</table>
 										</div>
@@ -303,18 +326,18 @@ class kiwi_logo_carousel_admin {
 										<div class="inside">
 											<table class="form-table">
 												<tr valign="top">
-													<th scope="row"><?php _e('Hide next button on last slide','kiwi_logo_carousel'); ?></th>
-													<td><select name="klc_hidecontrolonend">
-														<option value="false" <?php if (isset($p['hideControlOnEnd']) && $p['hideControlOnEnd']=='false'){echo 'selected';} ?>><?php _e('False','kiwi_logo_carousel'); ?></option>
-														<option value="true" <?php if (isset($p['hideControlOnEnd']) && $p['hideControlOnEnd']=='true'){echo 'selected';} ?>><?php _e('True','kiwi_logo_carousel'); ?></option>
-													</select></td>
-												</tr>
-												<tr valign="top">
 													<th scope="row"><?php _e('Show Controls','kiwi_logo_carousel'); ?></th>
 													<td><select name="klc_controls">
 														<option value="true" <?php if (isset($p['controls']) && $p['controls']=='true'){echo 'selected';} ?>><?php _e('True','kiwi_logo_carousel'); ?></option>
 														<option value="false" <?php if (isset($p['controls']) && $p['controls']=='false'){echo 'selected';} ?>><?php _e('False','kiwi_logo_carousel'); ?></option>
-													</select></td>
+													</select> <span class="description"><?php _e('Controls are not available when Ticker Mode is enabled','kiwi_logo_carousel'); ?></span></td>
+												</tr>
+												<tr valign="top">
+													<th scope="row"><?php _e('Hide next button on last slide','kiwi_logo_carousel'); ?></th>
+													<td><select name="klc_hidecontrolonend">
+														<option value="false" <?php if (isset($p['hideControlOnEnd']) && $p['hideControlOnEnd']=='false'){echo 'selected';} ?>><?php _e('False','kiwi_logo_carousel'); ?></option>
+														<option value="true" <?php if (isset($p['hideControlOnEnd']) && $p['hideControlOnEnd']=='true'){echo 'selected';} ?>><?php _e('True','kiwi_logo_carousel'); ?></option>
+													</select> <span class="description"><?php _e("Doesn't work when Infinite Loop is enabled",'kiwi_logo_carousel'); ?></span></td>
 												</tr>
 												<tr valign="top">
 													<th scope="row"><?php _e('Show Pager','kiwi_logo_carousel'); ?></th>
@@ -347,7 +370,7 @@ class kiwi_logo_carousel_admin {
 														<option value="default" <?php if (isset($p['klco_style']) && $p['klco_style']=='default'){echo 'selected';} ?>><?php _e('Default','kiwi_logo_carousel'); ?></option>
 														<option value="gray" <?php if (isset($p['klco_style']) && $p['klco_style']=='gray'){echo 'selected';} ?>><?php _e('Grayscale Images','kiwi_logo_carousel'); ?></option>
 														<option value="grayhovercolor" <?php if (isset($p['klco_style']) && $p['klco_style']=='grayhovercolor'){echo 'selected';} ?>><?php _e('Grayscale Images, Default Color on Hover','kiwi_logo_carousel'); ?></option>
-													</select></td>
+													</select> <span class="description"><?php _e("The grayscale feature is only available in modern browsers like Chrome, Firefox and Safari",'kiwi_logo_carousel'); ?></span></td>
 												</tr>
 												<tr valign="top">
 													<th scope="row"><?php _e('Show captions','kiwi_logo_carousel'); ?></th>
@@ -395,16 +418,22 @@ class kiwi_logo_carousel_admin {
 						<div class="inner-sidebar">
 							<div id="side-sortables" class="ui-sortable meta-box-sortable">
 								<div class="postbox">
-									<h3><span><?php _e('Carousel','kiwi_logo_carousel'); ?></span></h3>
+									<h3><span><?php _e('Form actions','kiwi_logo_carousel'); ?></span></h3>
 									<div class="inside">
 										<?php submit_button(); ?>
-										<p><?php _e('Shortcode','kiwi_logo_carousel'); ?>:<br/> <code>[logo-carousel id=<?php echo $carousel; ?>]</code></p>
-										<p><?php _e('PHP Function (No echo required)','kiwi_logo_carousel'); ?>:<br/> <code>kw_sc_logo_carousel(<?php echo $carousel; ?>);</code></p>
+									</div>
+								</div>
+								<div class="postbox">
+									<h3><span><?php _e('Insert Carousel','kiwi_logo_carousel'); ?></span></h3>
+									<div class="inside">
+										<p><?php _e('Insert with shortcode','kiwi_logo_carousel'); ?>:<br/> <code>[logo-carousel id=<?php echo $carousel; ?>]</code></p>
+										<p><?php _e('Insert with PHP','kiwi_logo_carousel'); ?>:<br/> <code>kw_sc_logo_carousel('<?php echo $carousel; ?>');</code></p>
 									</div>
 								</div></form>
 								<div class="postbox">
-									<h3><span><?php _e('Donate','kiwi_logo_carousel'); ?></span></h3>
+									<h3><span><?php _e('Do you like this plugin?','kiwi_logo_carousel', 'kiwi_logo_carousel'); ?></span></h3>
 									<div class="inside">
+										<p><?php echo _e('Please donate so this plugin can remain free!', 'kiwi_logo_carousel'); ?></p>
 										<form style="text-align:center; width:100%;" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 											<input type="hidden" name="cmd" value="_s-xclick">
 											<input type="hidden" name="hosted_button_id" value="K5Z5PN2ZSBE2G">

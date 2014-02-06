@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: ysdbjorn
 Donate link: http://getkiwi.org/donate/
-Tags: logo, slider, carousel
+Tags: logo, slider, carousel, ticker
 Requires at least: 3.6
 Tested up to: 3.8.1
-Stable tag: 1.4.4
+Stable tag: 1.5.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,11 @@ You need a server running PHP version 5.4 or newer. Older versions are not suppo
 5. Compatible with the new Wordpress 3.8!
 
 == Changelog ==
+
+= 1.5.0 (2014-02-06) =
+* Improvements on the "Manage Carousels" page
+* Logo and URL columns are added in the Logos overview
+* Bugfix: Ticker mode is glitching after hover
 
 = 1.4.4 (2014-01-30) =
 * Reversed some changes from last update, because of a bug
