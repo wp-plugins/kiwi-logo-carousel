@@ -53,10 +53,10 @@ You need a server running PHP version 5.4 or newer. Older versions are not suppo
 == Screenshots ==
 
 1. The Logo Carousel in action
-2. Uses Custom Post Types
-3. Uses categories as carousels
-4. Many options available
-5. Compatible with the new Wordpress 3.8!
+2. Logo overview
+3. Click on Custom Order and change your logo order with drag and drop
+4. Create carousels like categories
+5. Configure your carousels separately. Copy & paste the shortcode in any of your posts, your use the PHP function in your theme
 
 == Changelog ==
 
