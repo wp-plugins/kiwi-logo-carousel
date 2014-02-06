@@ -16,14 +16,16 @@ Show your partners, clients or sponsors on your website in a logo carousel!
 
 <h2>Features</h2>
 <ul>
-<li>Supports more than one Logo Carousel per page.</li>
-<li>Create different Logo Carousels with different settings for each Logo Carousel.</li>
+<li>Supports more than one Logo Carousel per page</li>
+<li>Create more than one carousel with different logos and use different settings per carousel</li>
 <li>Responsive</li>
-<li>Grayscale images (optional)</li>
-<li>Uses shortcodes</li>
-<li>URL Attachments, make your logos clickable</li>
-<li>Multilanguage, English and Dutch</li>
+<li>Optional grayscale image effect (for modern browsers)</li>
+<li>Paste your Logo Carousel in your theme with PHP or in a post with a shortcode</li>
+<li>Optional clickable logos</li>
+<li>Create a custom logo order with drag and drop</li>
 </ul>
+
+<p><a href="http://getkiwi.org/plugins/logo-carousel/">Click here for a demo</a></p>
 
 <p>Kiwi Logo Carousel uses code and libraries from <a target="_blank" href="http://bxslider.com/">bxSlider</a> and <a target="_blank" href="http://10up.com/plugins/simple-page-ordering-wordpress/">Simple Page Ordering</a></p>
 
