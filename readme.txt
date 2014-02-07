@@ -4,7 +4,7 @@ Donate link: http://getkiwi.org/donate/
 Tags: logo, slider, carousel, ticker
 Requires at least: 3.6
 Tested up to: 3.8.1
-Stable tag: 1.5.0
+Stable tag: 1.5.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,9 @@ You need a server running PHP version 5.4 or newer. Older versions are not suppo
 5. Configure your carousels separately. Copy & paste the shortcode in any of your posts, your use the PHP function in your theme
 
 == Changelog ==
+
+= 1.5.1 (2014-02-07) =
+* Bugfix
 
 = 1.5.0 (2014-02-06) =
 * Improvements on the "Manage Carousels" page

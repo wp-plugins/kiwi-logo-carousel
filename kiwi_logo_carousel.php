@@ -3,7 +3,7 @@
 	Plugin URL:		http://getkiwi.org/plugins/logo-carousel/
 	Description:	Highlight your clients, partners and sponsors on your website in a Logo Carousel
 	Author:			Kiwi by Yourstyledesign
-	Version:		1.5.0
+	Version:		1.5.1
 	Author URI:		http://www.getkiwi.org/
 	License:		GPLv2
 */
@@ -80,7 +80,7 @@ class kiwi_logo_carousel {
 				unset($parameters['klco_style']);
 				unset($parameters['klco_orderby']);
 				unset($parameters['klco_clickablelogos']);
-				if ($parameters['ticker']==true){ $parameters['auto'] = false; }
+				if ($parameters['ticker']=="true"){ $parameters['auto'] = "false"; }
 				$parameters['useCSS'] = 'false';
 				$lastkey = key( array_slice( $parameters, -1, 1, TRUE ) );
 				foreach ($parameters as $func => $var){
