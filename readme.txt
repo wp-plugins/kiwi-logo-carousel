@@ -3,7 +3,7 @@ Contributors: ysdbjorn
 Donate link: http://getkiwi.org/donate/
 Tags: logo, slider, carousel, ticker
 Requires at least: 3.6
-Tested up to: 3.8.1
+Tested up to: 3.9
 Stable tag: 1.5.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -48,9 +48,21 @@ Because the slug 'default' is already used for displaying all the logos.
 = Which browsers are supported? =
 
 We tested this plugin with: Internet Explorer 8, 9, 10; Chrome; Safari; Firefox; Opera;
+The grayscale effect does not work with some version of Internet Explorer.
 
 = What are the server requirements? =
 You need a server running PHP version 5.4 or newer. Older versions are not supported and may cause problems.
+
+= I have problems with adding logo images =
+When you are using a theme by TrueThemes or another theme which is not supporting featured images, or handles featured images in another way. You cannot use this plugin.
+Please contact your theme developer.
+
+= Why is the shortcode not working in widget areas? =
+Add this code to your themes functions.php:
+' add_filter('widget_text', 'do_shortcode'); '
+
+= Plugin doesn't work. jQuery not defined. =
+You need a recent version of jQuery to make things work. Please make sure you are loading jQuery in the header of your theme.
 
 == Screenshots ==
 
@@ -62,8 +74,19 @@ You need a server running PHP version 5.4 or newer. Older versions are not suppo
 
 == Changelog ==
 
+= 1.6.0 ( IN DEVELOPMENT - COMING SOON ) =
+* Removed Carousels & Logo's from the Menu Settings page in Wordpress back-end
+* Added option to set Autoplay Pauses
+* Fixed a problem with translation files
+* Added logo alignment options (requires logo height to be set)
+* Added logo height option (default height is set to 150 pixels)
+	Note: This new option will be added to existing Logo Carousels. This could mess up your existing Logo Carousel.
+* Improvement: When using Visual Composer Fontend Editor, Logo Carousels were messed up. Now showing an error message instead of Logo Carousel.
+	Note: Kiwi is not going to support Visual Composer, because it is a paid plugin. This is just an easy fix for people who still want to use Visual Composer.
+* Little improvements
+
 = 1.5.1 (2014-02-07) =
-* Bugfix
+* Bugfixes
 
 = 1.5.0 (2014-02-06) =
 * Improvements on the "Manage Carousels" page
