@@ -2,9 +2,9 @@
 Contributors: ysdbjorn
 Donate link: http://getkiwi.org/donate/
 Tags: logo, slider, carousel, ticker
-Requires at least: 3.6
+Requires at least: 3.4
 Tested up to: 3.9
-Stable tag: 1.5.1
+Stable tag: 1.6.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,8 +61,11 @@ Please contact your theme developer.
 Add this code to your themes functions.php:
 ' add_filter('widget_text', 'do_shortcode'); '
 
-= Plugin doesn't work. jQuery not defined. =
+= About jQuery =
 You need a recent version of jQuery to make things work. Please make sure you are loading jQuery in the header of your theme.
+You can activate jQuery from the plugin when your theme or plugins aren't using jQuery already.
+When you are not sure your theme / plugins are including jQuery already, you can simply test it by creating a carousel and put it somewhere on your website. If the carousel is working, you don't need to enable jQuery from the plugin.
+When you enabled jQuery from the plugin, and the carousel is still not working. Please check your site on Javascript errors or other possible issues in installed themes and plugins.
 
 == Screenshots ==
 
@@ -74,16 +77,25 @@ You need a recent version of jQuery to make things work. Please make sure you ar
 
 == Changelog ==
 
-= 1.6.0 ( IN DEVELOPMENT - COMING SOON ) =
+= 1.6.0 ( 2014-04-17 ) =
 * Removed Carousels & Logo's from the Menu Settings page in Wordpress back-end
 * Added option to set Autoplay Pauses
 * Fixed a problem with translation files
 * Added logo alignment options (requires logo height to be set)
 * Added logo height option (default height is set to 150 pixels)
-	Note: This new option will be added to existing Logo Carousels. This could mess up your existing Logo Carousel.
 * Improvement: When using Visual Composer Fontend Editor, Logo Carousels were messed up. Now showing an error message instead of Logo Carousel.
-	Note: Kiwi is not going to support Visual Composer, because it is a paid plugin. This is just an easy fix for people who still want to use Visual Composer.
+* Improvement: Plugin javascript now loaded in WP_FOOTER instead of WP_HEAD
+* Added a global option (applies on all carousels) for including jQuery from the plugin.
 * Little improvements
+
+<strong>Important notes about the 1.6.0 update:</strong>
+<ul>
+<li>The new height option will be added to existing Logo Carousels too. This could mess up your styling on the existing carousels.</li>
+<li>Kiwi is not going to support Visual Composer, because it is a paid plugin. The fix in this release is just an easy fix for people who still want to use Visual Composer.</li>
+<li>The new jQuery setting is disabled by default, you should enable this only when your Wordpress themes or plugins are not using jQuery already.</li>
+<li>When you are not sure your theme / plugins are including jQuery already, you can simply test it by creating a carousel and put it somewhere on your website. If the carousel is working, you don't need to enable jQuery from the plugin.</li>
+<li>When you enabled jQuery from the plugin, and the carousel is still not working. Please check your site on Javascript errors or other possible issues in installed themes and plugins.</li>
+</ul>
 
 = 1.5.1 (2014-02-07) =
 * Bugfixes

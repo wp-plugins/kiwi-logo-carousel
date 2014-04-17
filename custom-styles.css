@@ -30,6 +30,7 @@
 
 .bx-wrapper ul li {
 	text-align:center;
+	background:none;
 }
 .bx-wrapper ul li img {
 	max-height:100%;
@@ -58,3 +59,9 @@
 	.bx-wrapper .bx-prev { background: url(third-party/jquery.bxslider/images/controls@3x.png) no-repeat 0 -32px; background-size:96px,63px; }
 	.bx-wrapper .bx-next { background: url(third-party/jquery.bxslider/images/controls@3x.png) no-repeat -43px -32px; background-size:96px,63px; }
 }
+
+/* alignment */
+.bx-wrapper ul.kiwi-logo-carousel.align-center li span.helper { height:100%; display:inline-block; vertical-align:middle; }
+.bx-wrapper ul.kiwi-logo-carousel.align-center li img { max-height:100%; display:inline-block; vertical-align:middle; }
+.bx-wrapper ul.kiwi-logo-carousel.align-bottom li span.helper { height:100%; display:inline-block; vertical-align:bottom; }
+.bx-wrapper ul.kiwi-logo-carousel.align-bottom li img { max-height:100%; display:inline-block; vertical-align:bottom; }
