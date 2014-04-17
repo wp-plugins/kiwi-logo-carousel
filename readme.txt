@@ -3,7 +3,7 @@ Contributors: ysdbjorn
 Donate link: http://getkiwi.org/donate/
 Tags: logo, slider, carousel, ticker
 Requires at least: 3.6
-Tested up to: 3.8.1
+Tested up to: 3.9
 Stable tag: 1.5.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
