@@ -48,9 +48,21 @@ Because the slug 'default' is already used for displaying all the logos.
 = Which browsers are supported? =
 
 We tested this plugin with: Internet Explorer 8, 9, 10; Chrome; Safari; Firefox; Opera;
+The grayscale effect does not work with some version of Internet Explorer.
 
 = What are the server requirements? =
 You need a server running PHP version 5.4 or newer. Older versions are not supported and may cause problems.
+
+= I have problems with adding logo images =
+When you are using a theme by TrueThemes or another theme which is not supporting featured images, or handles featured images in another way. You cannot use this plugin.
+Please contact your theme developer.
+
+= Why is the shortcode not working in widget areas? =
+Add this code to your themes functions.php:
+' add_filter('widget_text', 'do_shortcode'); '
+
+= Plugin doesn't work. jQuery not defined. =
+You need a recent version of jQuery to make things work. Please make sure you are loading jQuery in the header of your theme.
 
 == Screenshots ==
 
