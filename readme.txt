@@ -4,7 +4,7 @@ Donate link: http://getkiwi.org/donate/
 Tags: logo, slider, carousel, ticker
 Requires at least: 3.4
 Tested up to: 3.9
-Stable tag: 1.6.0
+Stable tag: 1.6.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,9 @@ When you enabled jQuery from the plugin, and the carousel is still not working. 
 5. Configure your carousels separately. Copy & paste the shortcode in any of your posts, your use the PHP function in your theme
 
 == Changelog ==
+
+= 1.6.1 ( 2014-04-22 ) =
+* Bugfix: URL attachment doesn't save
 
 = 1.6.0 ( 2014-04-17 ) =
 * Removed Carousels & Logo's from the Menu Settings page in Wordpress back-end

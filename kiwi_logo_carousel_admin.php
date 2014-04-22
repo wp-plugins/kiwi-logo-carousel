@@ -194,7 +194,7 @@ class kiwi_logo_carousel_admin {
 	// Save the custom metabox data
 	function metabox_savedata(){
 	
-		if ( array_key_exists('kwlogos', $_POST) && 'kwlogos' == $_POST['post_type'] ) {
+		if ( 'kwlogos' == $_POST['post_type'] ) {
 			if ( ! current_user_can( 'edit_page', $post_id ) ){return;}
 		}
 		else {return;}
@@ -215,7 +215,6 @@ class kiwi_logo_carousel_admin {
 	function overview_columns_values($column_name, $post_ID) {
 		if ($column_name == 'logo') {
 			$img_url = wp_get_attachment_url( get_post_thumbnail_id($post_ID) );
-			//$img_url = 'placeholder';
 			if ($img_url) { echo '<img height="50" src="'.$img_url.'" />'; }
 			else { _e('No logo set', 'kiwi_logo_carousel'); }
 		}
