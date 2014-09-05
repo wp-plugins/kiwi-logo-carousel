@@ -2,9 +2,9 @@
 /*	Plugin Name:	Kiwi Logo Carousel
 	Plugin URL:		http://getkiwi.org/plugins/logo-carousel/
 	Description:	Highlight your clients, partners and sponsors on your website in a Logo Carousel
-	Author:			Kiwi by Yourstyledesign
-	Version:		1.6.1
-	Author URI:		http://www.getkiwi.org/
+	Author:			Yourstyledesign
+	Version:		1.7.0
+	Author URI:		http://www.yourstyledesign.nl/
 	License:		GPLv2
 */
 
@@ -23,28 +23,28 @@ class kiwi_logo_carousel {
 		load_plugin_textdomain( 'kiwi_logo_carousel', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 		
 		// Scripts
-		add_action('init', array( &$this, 'load_jquery_script' ) );
-		add_action('init', array( &$this, 'load_styles' ) );
-		add_action('wp_footer', array( &$this, 'load_scripts' ) );
-		add_action('wp_footer', array( &$this, 'load_javascript_parameters' ) );
+		add_action('init', array( $this, 'load_jquery_script' ) );
+		add_action('init', array( $this, 'load_styles' ) );
+		add_action('wp_footer', array( $this, 'load_scripts' ) );
+		add_action('wp_footer', array( $this, 'load_javascript_parameters' ) );
 		
 		// Custom Post Type
-		add_action( 'init', array( &$this->klcadmin, 'cpt' ) );
+		add_action( 'init', array( $this->klcadmin, 'cpt' ) );
 		
 		// Custom Post Type Taxonomy Carousel
-		add_action( 'init', array( &$this->klcadmin, 'cpt_taxonomy' ), 0);
+		add_action( 'init', array( $this->klcadmin, 'cpt_taxonomy' ), 0);
 		
 		// Make Featured Image Meta Box Bigger
-		add_action( 'do_meta_boxes', array( &$this->klcadmin, 'metabox_logo' ) );
+		add_action( 'do_meta_boxes', array( $this->klcadmin, 'metabox_logo' ) );
 		
 		// Admin Menu
-		add_action( 'admin_menu', array( &$this->klcadmin, 'admin_pages' ) );
+		add_action( 'admin_menu', array( $this->klcadmin, 'admin_pages' ) );
 		
 		// Shortcodes
 		add_shortcode( 'logo-carousel', 'kiwi_logo_carousel_shortcode' );
 		
 		// Register Settings
-		add_action( 'admin_init', array( &$this, 'register_settings' ) );
+		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_option( 'kiwiLGCRSL-jquery', '0' );
 		
 	}
@@ -55,12 +55,8 @@ class kiwi_logo_carousel {
 	}
 	
 	// Load jQuery script
-	function load_jquery_script(){
-		if (get_option('kiwiLGCRSL-jquery')=="1"){
-			wp_deregister_script( 'jquery' );
-			wp_register_script( 'jquery', "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js", array(), false, false);
-			wp_enqueue_script( 'jquery' );
-		}
+	function load_jquery_script() {
+		wp_enqueue_script( 'jquery' );
 	}
 	
 	// Load CSS file
@@ -96,6 +92,7 @@ class kiwi_logo_carousel {
 				unset($parameters['klco_clickablelogos']);
 				unset($parameters['klco_alignment']);
 				unset($parameters['klco_height']);
+				unset($parameters['slideMargin']);
 				if ($parameters['ticker']=="true"){ $parameters['auto'] = "false"; }
 				$parameters['useCSS'] = 'false';
 				$lastkey = key( array_slice( $parameters, -1, 1, TRUE ) );
@@ -147,10 +144,10 @@ function kiwi_logo_carousel_shortcode( $atts, $content = null ) {
 				$url = get_post_meta( $logo->ID, '_kwlogos_link', true );
 				if ( !isset( $parameters['klco_clickablelogos'] )) { $parameters['klco_clickablelogos'] = 'newtab'; }
 				if ( !empty($url) && $parameters['klco_clickablelogos']!="off" ) {
-					if ( $parameters['klco_clickablelogos'] == "newtab" ) { $returnstring.= '<li style="height:'.$parameters['klco_height'].'px;"><span class="helper"></span><a target="_blank" href="'.$url.'"><img src="'.$image.'" alt="'.$logo->post_title.'" title="'.$logo->post_title.'"></a></li>'; }
-					else if ( $parameters['klco_clickablelogos'] == "samewindow" ) { $returnstring.= '<li style="height:'.$parameters['klco_height'].'px;"><span class="helper"></span><a href="'.$url.'"><img src="'.$image.'" alt="'.$logo->post_title.'" title="'.$logo->post_title.'"></a></li>'; }
+					if ( $parameters['klco_clickablelogos'] == "newtab" ) { $returnstring.= '<li style="height:'.$parameters['klco_height'].'px;"><a target="_blank" href="'.$url.'"><div class="helper" style="height:'.$parameters['klco_height'].'px; width:'.$parameters['slideWidth'].'px;" ><img src="'.$image.'" alt="'.$logo->post_title.'" title="'.$logo->post_title.'"></div></a></li>'; }
+					else if ( $parameters['klco_clickablelogos'] == "samewindow" ) { $returnstring.= '<li style="height:'.$parameters['klco_height'].'px;"><a href="'.$url.'"><div class="helper" style="height:'.$parameters['klco_height'].'px; width:'.$parameters['slideWidth'].'px;" ><img src="'.$image.'" alt="'.$logo->post_title.'" title="'.$logo->post_title.'"></div></a></li>'; }
 				}
-				else { $returnstring.= '<li style="height:'.$parameters['klco_height'].'px;" ><span class="helper"></span><img src="'.$image.'" alt="'.$logo->post_title.'" title="'.$logo->post_title.'"></li>'; }
+				else { $returnstring.= '<li style="height:'.$parameters['klco_height'].'px;" ><div class="helper" style="height:'.$parameters['klco_height'].'px; width:'.$parameters['slideWidth'].'px;" ><img src="'.$image.'" alt="'.$logo->post_title.'" title="'.$logo->post_title.'" style="max-width:'.$parameters['slideWidth'].'px; padding-left: '.$parameters['slideMargin']/ 2 .'px; padding-right:'.$parameters['slideMargin']/ 2 .'px" ></div></li>'; }
 			endforeach;
 			$returnstring.= '</ul>';
 			return $returnstring;
@@ -160,6 +157,6 @@ function kiwi_logo_carousel_shortcode( $atts, $content = null ) {
 
 if ( ! function_exists('kw_sc_logo_carousel')) {
 	function kw_sc_logo_carousel($id = 'default') {
-		echo do_shortcode('[logo-carousel '.$id.']');
+		echo do_shortcode('[logo-carousel id='.$id.']');
 	}
 }

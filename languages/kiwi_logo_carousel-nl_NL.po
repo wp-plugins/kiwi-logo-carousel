@@ -1,94 +1,94 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kiwi Logo Carousel\n"
-"POT-Creation-Date: 2014-04-17 16:30+0100\n"
-"PO-Revision-Date: 2014-04-17 16:35+0100\n"
+"POT-Creation-Date: 2014-09-05 11:43+0100\n"
+"PO-Revision-Date: 2014-09-05 11:43+0100\n"
 "Last-Translator: Bjorn Manintveld <bjorn@yourstyledesign.nl>\n"
 "Language-Team: Bjorn Manintveld <bjorn@yourstyledesign.nl>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.6.9\n"
 "X-Poedit-KeywordsList: _;_e;_x;__\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
-#: ../kiwi_logo_carousel.php:142
+#: ../kiwi_logo_carousel.php:139
 msgid "This carousel is empty, please add some logos."
 msgstr "Deze carrousel is leeg, voeg eerst logo's toe."
 
-#: ../kiwi_logo_carousel_admin.php:71 ../kiwi_logo_carousel_admin.php:82
+#: ../kiwi_logo_carousel_admin.php:73 ../kiwi_logo_carousel_admin.php:84
 msgid "Logos"
 msgstr "Logo's"
 
-#: ../kiwi_logo_carousel_admin.php:72 ../kiwi_logo_carousel_admin.php:175
+#: ../kiwi_logo_carousel_admin.php:74 ../kiwi_logo_carousel_admin.php:177
 msgid "Logo"
 msgstr "Logo"
 
-#: ../kiwi_logo_carousel_admin.php:73 ../kiwi_logo_carousel_admin.php:74
+#: ../kiwi_logo_carousel_admin.php:75 ../kiwi_logo_carousel_admin.php:76
 msgid "Add New Logo"
 msgstr "Nieuw Logo"
 
-#: ../kiwi_logo_carousel_admin.php:75
+#: ../kiwi_logo_carousel_admin.php:77
 msgid "Edit Logo"
 msgstr "Logo Bewerken"
 
-#: ../kiwi_logo_carousel_admin.php:76
+#: ../kiwi_logo_carousel_admin.php:78
 msgid "New Logo"
 msgstr "Nieuw Logo"
 
-#: ../kiwi_logo_carousel_admin.php:77
+#: ../kiwi_logo_carousel_admin.php:79
 msgid "View Logo"
 msgstr "Bekijk Logo"
 
-#: ../kiwi_logo_carousel_admin.php:78
+#: ../kiwi_logo_carousel_admin.php:80
 msgid "Search Logos"
 msgstr "Zoeken in Logo's"
 
-#: ../kiwi_logo_carousel_admin.php:79
+#: ../kiwi_logo_carousel_admin.php:81
 msgid "No Logos found"
 msgstr "Geen logo's gevonden"
 
-#: ../kiwi_logo_carousel_admin.php:80
+#: ../kiwi_logo_carousel_admin.php:82
 msgid "No Logos found in Trash"
 msgstr "Geen logo's gevonden in de prullenbak"
 
-#: ../kiwi_logo_carousel_admin.php:81
+#: ../kiwi_logo_carousel_admin.php:83
 msgid "Parent Logo:"
 msgstr "Hoofd Logo:"
 
-#: ../kiwi_logo_carousel_admin.php:136
+#: ../kiwi_logo_carousel_admin.php:138
 msgid "Carousels"
 msgstr "Carrousels"
 
-#: ../kiwi_logo_carousel_admin.php:165 ../kiwi_logo_carousel_admin.php:396
+#: ../kiwi_logo_carousel_admin.php:167 ../kiwi_logo_carousel_admin.php:396
 msgid "Default"
 msgstr "Standaard"
 
-#: ../kiwi_logo_carousel_admin.php:181
+#: ../kiwi_logo_carousel_admin.php:183
 msgid "URL attachment (optional)"
 msgstr "Voeg een URL toe (optioneel)"
 
-#: ../kiwi_logo_carousel_admin.php:188
+#: ../kiwi_logo_carousel_admin.php:190
 msgid "Add an URL to make this logo clickable"
 msgstr "Voeg een URL toe om dit logo klikbaar te maken"
 
-#: ../kiwi_logo_carousel_admin.php:210
+#: ../kiwi_logo_carousel_admin.php:212
 msgid "URL"
 msgstr "URL"
 
-#: ../kiwi_logo_carousel_admin.php:211
+#: ../kiwi_logo_carousel_admin.php:213
 msgid "Logo Preview"
 msgstr "Logo voorbeeld"
 
-#: ../kiwi_logo_carousel_admin.php:220
+#: ../kiwi_logo_carousel_admin.php:221
 msgid "No logo set"
 msgstr "Geen logo ingesteld"
 
-#: ../kiwi_logo_carousel_admin.php:232 ../kiwi_logo_carousel_admin.php:233
+#: ../kiwi_logo_carousel_admin.php:233 ../kiwi_logo_carousel_admin.php:234
 msgid "Manage Carousels"
 msgstr "Beheer Carrousels"
 
@@ -304,47 +304,43 @@ msgstr "Invoegen met een shortcode"
 msgid "Insert with PHP"
 msgstr "Invoegen met PHP"
 
-#: ../kiwi_logo_carousel_admin.php:472
-msgid "jQuery"
-msgstr "jQuery"
-
-#: ../kiwi_logo_carousel_admin.php:474
-msgid ""
-"When your Wordpress theme or plugins don't have jQuery enabled. You need to "
-"enable it manually from here to make Kiwi Logo Carousel work."
-msgstr ""
-"Wanneer uw Wordpress thema of plugin's niet standaard jQuery gebruiken, dan "
-"moet u dit hier handmatig activeren om Kiwi Logo Carousel werkend te maken."
-
-#: ../kiwi_logo_carousel_admin.php:475
-msgid ""
-"Most Wordpress themes are using jQuery by default, that's why we disabled "
-"this setting by default. When Kiwi Logo Carousel is working, you don't need "
-"to enable jQuery here."
-msgstr ""
-"De meeste Wordpress thema's gebruiken al standaard jQuery, daarom hebben we "
-"deze optie standaard uitgeschakeld. Wanneer Kiwi Logo Carousel goed werkt, "
-"hoeft u deze optie niet in te schakelen."
-
-#: ../kiwi_logo_carousel_admin.php:477
-msgid "Don't add jQuery (default)"
-msgstr "jQuery niet toevoegen (standaard)"
-
-#: ../kiwi_logo_carousel_admin.php:478
-msgid "Add jQuery"
-msgstr "jQuery Toevoegen"
-
-#: ../kiwi_logo_carousel_admin.php:484
+#: ../kiwi_logo_carousel_admin.php:473
 msgid "Do you like this plugin?"
 msgstr "Bent u tevreden met deze plugin?"
 
-#: ../kiwi_logo_carousel_admin.php:486
+#: ../kiwi_logo_carousel_admin.php:475
 msgid "Please donate so this plugin can remain free!"
 msgstr "Dankzij uw donaties kan deze plugin gratis blijven."
 
 #: ../kiwi_logo_carousel_order.php:195
 msgid "Drag and drop items to change the custom order"
 msgstr "Je kunt items verslepen om de aangepaste volgorde te wijzigen"
+
+#~ msgid "jQuery"
+#~ msgstr "jQuery"
+
+#~ msgid ""
+#~ "When your Wordpress theme or plugins don't have jQuery enabled. You need "
+#~ "to enable it manually from here to make Kiwi Logo Carousel work."
+#~ msgstr ""
+#~ "Wanneer uw Wordpress thema of plugin's niet standaard jQuery gebruiken, "
+#~ "dan moet u dit hier handmatig activeren om Kiwi Logo Carousel werkend te "
+#~ "maken."
+
+#~ msgid ""
+#~ "Most Wordpress themes are using jQuery by default, that's why we disabled "
+#~ "this setting by default. When Kiwi Logo Carousel is working, you don't "
+#~ "need to enable jQuery here."
+#~ msgstr ""
+#~ "De meeste Wordpress thema's gebruiken al standaard jQuery, daarom hebben "
+#~ "we deze optie standaard uitgeschakeld. Wanneer Kiwi Logo Carousel goed "
+#~ "werkt, hoeft u deze optie niet in te schakelen."
+
+#~ msgid "Don't add jQuery (default)"
+#~ msgstr "jQuery niet toevoegen (standaard)"
+
+#~ msgid "Add jQuery"
+#~ msgstr "jQuery Toevoegen"
 
 #~ msgid "Move slides"
 #~ msgstr "Aantal dia's verplaatsen"

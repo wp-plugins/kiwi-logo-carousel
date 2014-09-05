@@ -2,9 +2,9 @@
 Contributors: ysdbjorn
 Donate link: http://getkiwi.org/donate/
 Tags: logo, slider, carousel, ticker
-Requires at least: 3.4
-Tested up to: 3.9
-Stable tag: 1.6.1
+Requires at least: 3.4.2
+Tested up to: 4.0
+Stable tag: 1.7.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,6 +29,14 @@ Show your partners, clients or sponsors on your website in a logo carousel!
 
 <p>Kiwi Logo Carousel uses code and libraries from <a target="_blank" href="http://bxslider.com/">bxSlider</a> and <a target="_blank" href="http://10up.com/plugins/simple-page-ordering-wordpress/">Simple Page Ordering</a></p>
 
+<p>This plugin is translated in the following languages:
+<ul>
+<li>Dutch</li>
+<li>Serbian - translated by <a href="http://firstsiteguide.com/">Ogi Djuraskovic from firstsiteguide.com</a></li>
+</ul>
+Would you like to make a translation for this plugin? Please contact me on <a href="mailto:bjorn@yourstyledesign.nl">bjorn@yourstyledesign.nl</a>.
+</p>
+
 == Installation ==
 
 <ul>
@@ -47,8 +55,8 @@ Because the slug 'default' is already used for displaying all the logos.
 
 = Which browsers are supported? =
 
-We tested this plugin with: Internet Explorer 8, 9, 10; Chrome; Safari; Firefox; Opera;
-The grayscale effect does not work with some version of Internet Explorer.
+We tested this plugin with: Internet Explorer 8, 9, 10, 11; Chrome; Safari; Firefox; Opera;
+The grayscale effect does not work with some versions of Internet Explorer.
 
 = What are the server requirements? =
 You need a server running PHP version 5.4 or newer. Older versions are not supported and may cause problems.
@@ -76,6 +84,12 @@ When you enabled jQuery from the plugin, and the carousel is still not working. 
 5. Configure your carousels separately. Copy & paste the shortcode in any of your posts, your use the PHP function in your theme
 
 == Changelog ==
+
+= 1.6.2 ( 2014-09-04 ) =
+* Bugfixes and improvements
+* Fixed a Wordpress 3.4 compability issue.
+* Plugin is now using the jQuery library included in Wordpress
+* Serbian translations added. Translation created by Ogi Djuraskovic.
 
 = 1.6.1 ( 2014-04-22 ) =
 * Bugfix: URL attachment doesn't save

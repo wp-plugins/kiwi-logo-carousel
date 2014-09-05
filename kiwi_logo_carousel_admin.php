@@ -7,14 +7,14 @@ class kiwi_logo_carousel_admin {
 	function __construct() {
 		
 		//Wordpress 3.8 Icon
-		add_action( 'init', array( &$this, 'cpt_wordpress_font_icon' ) );
+		add_action( 'init', array( $this, 'cpt_wordpress_font_icon' ) );
 		// Meta Box Link Attachment
-		add_action("add_meta_boxes", array( &$this, "metabox_link" ) );
+		add_action("add_meta_boxes", array( $this, "metabox_link" ) );
 		// Save Custom Data From Meta Boxes
-		add_action('save_post', array( &$this, "metabox_savedata" ));
+		add_action('save_post', array( $this, "metabox_savedata" ));
 		
-		add_filter('manage_kwlogos_posts_columns', array( &$this, 'overview_columns' ), 10);
-		add_action('manage_kwlogos_posts_custom_column', array( &$this, 'overview_columns_values' ), 10, 2);
+		add_filter('manage_kwlogos_posts_columns', array( $this, 'overview_columns' ), 10);
+		add_action('manage_kwlogos_posts_custom_column', array( $this, 'overview_columns_values' ), 10, 2);
 		
 		$this->default_values = array(
 			'mode' => 'horizontal',
@@ -60,7 +60,9 @@ class kiwi_logo_carousel_admin {
 				return $this->default_values;
 			}
 			else {
-				return array_merge($this->default_values, unserialize(get_option('kiwiLGCRSL_'.$slug)));
+				$par = get_option('kiwiLGCRSL_'.$slug);
+				if ( is_array($par) ) { return array_merge($this->default_values, $par); }
+				else { return array_merge($this->default_values, unserialize($par)); }
 			}
 		}
 	}
@@ -109,10 +111,10 @@ class kiwi_logo_carousel_admin {
 	function cpt_wordpress_font_icon() {
 		$wp_version = floatval( get_bloginfo( 'version' ) );
 		if ( $wp_version >= 3.8 ) {
-			add_action( 'admin_head', array( &$this, 'cpt_wordpress_font_icon_css' ) );
+			add_action( 'admin_head', array( $this, 'cpt_wordpress_font_icon_css' ) );
 		}
 		else {
-			add_action( 'admin_head', array( &$this, 'cpt_wordpress_img_icon_css' ) );
+			add_action( 'admin_head', array( $this, 'cpt_wordpress_img_icon_css' ) );
 		}
 	}
 	
@@ -178,7 +180,7 @@ class kiwi_logo_carousel_admin {
 	// Meta Box Link
 	function metabox_link() {
 		if ( 'kwlogos' == get_post_type() ){
-			add_meta_box("meta_kwlogoslink", __('URL attachment (optional)', 'kiwi_logo_carousel'), array( &$this, "metabox_link_contents" ), "kwlogos", "normal", "low"); //register metabox
+			add_meta_box("meta_kwlogoslink", __('URL attachment (optional)', 'kiwi_logo_carousel'), array( $this, "metabox_link_contents" ), "kwlogos", "normal", "low"); //register metabox
 		}
 	}
 	
@@ -232,7 +234,7 @@ class kiwi_logo_carousel_admin {
 			__('Manage Carousels', 'kiwi_logo_carousel'),
 			'manage_options',
 			'kwlogos_settings',
-			array( &$this, 'admin_pages_manage_carousels' )
+			array( $this, 'admin_pages_manage_carousels' )
 		);
 	}
 	
@@ -275,7 +277,6 @@ class kiwi_logo_carousel_admin {
 						$parameters['klco_height'] = $this->rdie($_POST['klco_height'], $default['klco_height']);
 						$parameters = serialize($parameters);
 						update_option( 'kiwiLGCRSL_'.$carousel, $parameters );
-						update_option( 'kiwiLGCRSL-jquery', $_POST['pluginsetting_jquery'] );
 						echo '<div id="setting-error-settings_updated" class="updated settings-error"><p><strong>'.__('Settings saved.').'</strong></p></div>';
 					}
 				?>
@@ -465,17 +466,6 @@ class kiwi_logo_carousel_admin {
 									<div class="inside">
 										<p><?php _e('Insert with shortcode','kiwi_logo_carousel'); ?>:<br/> <code>[logo-carousel id=<?php echo $carousel; ?>]</code></p>
 										<p><?php _e('Insert with PHP','kiwi_logo_carousel'); ?>:<br/> <code>kw_sc_logo_carousel('<?php echo $carousel; ?>');</code></p>
-									</div>
-								</div>
-								<div class="postbox">
-									<h3><span><?php _e('jQuery','kiwi_logo_carousel'); ?></span></h3>
-									<div class="inside">
-										<p><?php _e("When your Wordpress theme or plugins don't have jQuery enabled. You need to enable it manually from here to make Kiwi Logo Carousel work.",'kiwi_logo_carousel'); ?></p>
-										<p><em><?php _e("Most Wordpress themes are using jQuery by default, that's why we disabled this setting by default. When Kiwi Logo Carousel is working, you don't need to enable jQuery here.",'kiwi_logo_carousel'); ?></em></p>
-										<select name="pluginsetting_jquery">
-											<option value="0" <?php if (get_option('kiwiLGCRSL-jquery')=='0'){echo 'selected';} ?>><?php _e("Don't add jQuery (default)",'kiwi_logo_carousel'); ?></option>
-											<option value="1" <?php if (get_option('kiwiLGCRSL-jquery')=='1'){echo 'selected';} ?>><?php _e("Add jQuery",'kiwi_logo_carousel'); ?></option>
-										</select>
 									</div>
 								</div>
 								</form>
