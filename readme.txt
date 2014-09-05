@@ -85,7 +85,7 @@ When you enabled jQuery from the plugin, and the carousel is still not working. 
 
 == Changelog ==
 
-= 1.6.2 ( 2014-09-04 ) =
+= 1.7.0 ( 2014-09-05 ) =
 * Bugfixes and improvements
 * Fixed a Wordpress 3.4 compability issue.
 * Plugin is now using the jQuery library included in Wordpress
