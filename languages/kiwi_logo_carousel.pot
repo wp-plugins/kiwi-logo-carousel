@@ -1,0 +1,315 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Kiwi Logo Carousel\n"
+"POT-Creation-Date: 2014-09-05 11:45+0100\n"
+"PO-Revision-Date: 2014-09-05 11:45+0100\n"
+"Last-Translator: Bjorn Manintveld <bjorn@yourstyledesign.nl>\n"
+"Language-Team: Bjorn Manintveld <bjorn@yourstyledesign.nl>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"X-Poedit-KeywordsList: _;_e;__;_x\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../kiwi_logo_carousel.php:139
+msgid "This carousel is empty, please add some logos."
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:73 ../kiwi_logo_carousel_admin.php:84
+msgid "Logos"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:74 ../kiwi_logo_carousel_admin.php:177
+msgid "Logo"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:75 ../kiwi_logo_carousel_admin.php:76
+msgid "Add New Logo"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:77
+msgid "Edit Logo"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:78
+msgid "New Logo"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:79
+msgid "View Logo"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:80
+msgid "Search Logos"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:81
+msgid "No Logos found"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:82
+msgid "No Logos found in Trash"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:83
+msgid "Parent Logo:"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:138
+msgid "Carousels"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:167 ../kiwi_logo_carousel_admin.php:396
+msgid "Default"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:183
+msgid "URL attachment (optional)"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:190
+msgid "Add an URL to make this logo clickable"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:212
+msgid "URL"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:213
+msgid "Logo Preview"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:221
+msgid "No logo set"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:233 ../kiwi_logo_carousel_admin.php:234
+msgid "Manage Carousels"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:280
+msgid "Settings saved."
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:291
+msgid "General"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:295
+msgid "Mode"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:297
+msgid "Horizontal"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:298
+msgid "Vertical"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:302
+msgid "Speed (ms)"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:306
+msgid "Infinite Loop"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:308 ../kiwi_logo_carousel_admin.php:315
+#: ../kiwi_logo_carousel_admin.php:326 ../kiwi_logo_carousel_admin.php:333
+#: ../kiwi_logo_carousel_admin.php:364 ../kiwi_logo_carousel_admin.php:371
+#: ../kiwi_logo_carousel_admin.php:378 ../kiwi_logo_carousel_admin.php:412
+#: ../kiwi_logo_carousel_admin.php:419 ../kiwi_logo_carousel_admin.php:426
+msgid "True"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:309 ../kiwi_logo_carousel_admin.php:316
+#: ../kiwi_logo_carousel_admin.php:327 ../kiwi_logo_carousel_admin.php:334
+#: ../kiwi_logo_carousel_admin.php:365 ../kiwi_logo_carousel_admin.php:372
+#: ../kiwi_logo_carousel_admin.php:379 ../kiwi_logo_carousel_admin.php:413
+#: ../kiwi_logo_carousel_admin.php:420 ../kiwi_logo_carousel_admin.php:427
+msgid "False"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:313
+msgid "Autoplay"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:320
+msgid "Autoplay Pause (milliseconds)"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:324
+msgid "Use Ticker Mode"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:331
+msgid "Pause Ticker on Hover"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:338
+msgid "Order by"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:340 ../kiwi_logo_carousel_order.php:198
+msgid "Custom Order"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:341
+msgid "Random Order"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:342
+msgid "Title"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:343
+msgid "Date"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:347
+msgid "Clickable logos"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:349
+msgid "Open in new tab"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:350
+msgid "Open in the same window"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:351
+msgid "Turn off"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:358
+msgid "Controls"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:362
+msgid "Show Controls"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:366
+msgid "Controls are not available when Ticker Mode is enabled"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:369
+msgid "Hide next button on last slide"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:373
+msgid "Doesn't work when Infinite Loop is enabled"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:376
+msgid "Show Pager"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:386
+msgid "Styling"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:390
+msgid "Logo Margin (pixels)"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:394
+msgid "Logo Style"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:397
+msgid "Grayscale Images"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:398
+msgid "Grayscale Images, Default Color on Hover"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:399
+msgid ""
+"The grayscale feature is only available in modern browsers like Chrome, "
+"Firefox and Safari"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:402
+msgid "Logo Alignment"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:404
+msgid "Top"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:405
+msgid "Center"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:406
+msgid "Bottom"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:410
+msgid "Show captions"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:417
+msgid "Adaptive Height"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:424
+msgid "Responsive"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:431
+msgid "Minimal logos"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:435
+msgid "Maximum logos"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:439
+msgid "Move logos"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:443
+msgid "Logo width (pixels)"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:447
+msgid "Logo height (pixels)"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:459
+msgid "Form actions"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:465
+msgid "Insert Carousel"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:467
+msgid "Insert with shortcode"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:468
+msgid "Insert with PHP"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:473
+msgid "Do you like this plugin?"
+msgstr ""
+
+#: ../kiwi_logo_carousel_admin.php:475
+msgid "Please donate so this plugin can remain free!"
+msgstr ""
+
+#: ../kiwi_logo_carousel_order.php:195
+msgid "Drag and drop items to change the custom order"
+msgstr ""
