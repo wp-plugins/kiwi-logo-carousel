@@ -195,7 +195,7 @@ class kiwi_logo_carousel_admin {
 	
 	// Save the custom metabox data
 	function metabox_savedata(){
-	
+		if (!isset($_POST['post_type'])) { return; }
 		if ( 'kwlogos' == $_POST['post_type'] ) {
 			if ( ! current_user_can( 'edit_page', $post_id ) ){return;}
 		}
@@ -204,7 +204,6 @@ class kiwi_logo_carousel_admin {
 		$post_ID = $_POST['post_ID'];
 		$kwlogos_link = sanitize_text_field( $_POST['kwlogos_link'] );
 		add_post_meta($post_ID, '_kwlogos_link', $kwlogos_link, true) or update_post_meta($post_ID, '_kwlogos_link', $kwlogos_link);
-		
 	}
 
 	// Custom columns in logo overview

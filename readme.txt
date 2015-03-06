@@ -3,8 +3,8 @@ Contributors: ysdbjorn
 Donate link: http://getkiwi.org/donate/
 Tags: logo, slider, carousel, ticker
 Requires at least: 3.4.2
-Tested up to: 4.0
-Stable tag: 1.7.0
+Tested up to: 4.1
+Stable tag: 1.7.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,6 +33,7 @@ Show your partners, clients or sponsors on your website in a logo carousel!
 <ul>
 <li>Dutch</li>
 <li>Serbian - translated by <a href="http://firstsiteguide.com/">Ogi Djuraskovic from firstsiteguide.com</a></li>
+<li>Spanish - translated by Alejandro Soret</li>
 </ul>
 Would you like to make a translation for this plugin? Please contact me on <a href="mailto:bjorn@yourstyledesign.nl">bjorn@yourstyledesign.nl</a>.
 </p>
@@ -84,6 +85,10 @@ When you enabled jQuery from the plugin, and the carousel is still not working. 
 5. Configure your carousels separately. Copy & paste the shortcode in any of your posts, your use the PHP function in your theme
 
 == Changelog ==
+
+= 1.7.1 ( 2015-03-06 ) =
+* Bugfixes
+* Added new Spanish translations. Thanks to Alejandro Soret.
 
 = 1.7.0 ( 2014-09-05 ) =
 * Bugfixes and improvements
