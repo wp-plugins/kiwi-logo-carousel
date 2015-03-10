@@ -87,7 +87,7 @@ When you enabled jQuery from the plugin, and the carousel is still not working. 
 == Changelog ==
 
 = 1.7.1 ( 2015-03-06 ) =
-* Bugfixes
+* Bugfixes and improvements
 * Added new Spanish translations. Thanks to Alejandro Soret.
 
 = 1.7.0 ( 2014-09-05 ) =
