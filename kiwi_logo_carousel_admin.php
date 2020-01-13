@@ -95,10 +95,13 @@ class kiwi_logo_carousel_admin {
 			'show_ui' => true,
 			'show_in_menu' => true,
 			'show_in_nav_menus' => false,
-			'publicly_queryable' => true,
+	//'publicly_queryable' => true,
+	'publicly_queryable' => false, //custom option to hide for google idexation and prevent custom logos page creation
 			'exclude_from_search' => true,
-			'has_archive' => true,
-			'query_var' => true,
+	//'has_archive' => true,
+	'has_archive' => false, //custom option to hide for google idexation and prevent custom logos page creation
+	//'query_var' => true,
+	'query_var' => false, //custom option to hide for google idexation and prevent custom logos page creation
 			'can_export' => true,
 			'rewrite' => true,
 			'capability_type' => 'post',
